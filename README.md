@@ -11,15 +11,11 @@ from product p left join ProductImages pi on p.Id = pi.ProductId
 where ImageIndex = 0 and pd.CountryCode = 'us';
 ```
 
-## About the code
+## The Code's Perspective
+The code developed for tackling steps 1 and 2 represents an initial solution but falls short of a full-fledged development in a real-world scenario. In practice, we would employ MLflow to facilitate model versioning during grid search, ensuring a more structured and manageable approach.
 
-The developed code to solve steps 1 and 2 it's not considered a solution for a real development. 
-In a real case, I would have applied MLFlow over the gridsearch to persist the model versioning.
+While Data Version Control (DVC) is a valuable tool for tracking dataset versions, its application wasn't deemed necessary in this instance, primarily due to a singular dataset version. Additionally, the exploratory data analysis (EDA) couldn't be conducted comprehensively due to time constraints.
 
-Also, I could have used of DVC ( data version control), but in this case, as there is only one dataset version, it hasn't been considered to apply DVC.
-Furthermore, the EDA has not been deeply study due to the lack of time. 
+In a real-world problem, a thorough examination of the model's performance across dataset labels would be imperative. For example, in the provided solution, we relied on upsampling alone to balance the dataset, as it was uncertain whether introducing downsampling might lead to underfitting or overfitting for certain labels.
 
-In a real case problem, I would have been studied the model limits over the dataset labels. 
-For instance, in the provided solution, only upsampling is applied to balance the dataset, because of the unknowing if by also applying downsampling the model will have underfitting or overfitting for some labels.
-
-Moreover, it hasn't been tested, at all, the model response over leaving the dataset slighty unbalanced and compare it with the fully balanced one.
+It's important to note that while conducting these checks over the model and datasets is indeed crucial, they couldn't be performed in this instance due to significant time constraints. Nonetheless, in a production environment, where meticulous attention to detail is possible, these steps should be a priority.
