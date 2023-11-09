@@ -3,6 +3,7 @@ Challenge solution for Centric Software
 Readme file
 
 SQL Solution
+
 select p.Title, i.Url, IFNULL(pd.TranslatedText, OriginalText) as ProductDescription
 from product p left join ProductImages pi on p.Id = pi.ProductId
 	 left join ProductDescription pd on p.Id = pd.ProductId
